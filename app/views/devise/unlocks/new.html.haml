@@ -1,0 +1,9 @@
+%h2.subtitle Resend unlock instructions
+= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+  = devise_error_messages!
+  .field
+    = f.label :email, :class => "label"
+    = f.email_field :email, :class => "input", autofocus: true
+  %p.control
+    = f.submit "Resend unlock instructions", :class => "button is-primary"
+= render "devise/shared/links"

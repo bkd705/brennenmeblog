@@ -1,0 +1,19 @@
+.container
+  .columns
+    .column.is-half.is-offset-one-quarter
+      %h2.subtitle Create a profile
+      = form_for(@profile, url: user_profile_path, :html => { :multipart => true }) do |f|
+        .field
+          = f.label :first_name, class: "label"
+          %p.control
+            = f.text_field :first_name, class: "input", autofocus: true
+        .field
+          = f.label :last_name, class: "label"
+          %p.control
+            = f.text_field :last_name, class: "input"
+        .field
+          = f.label :description, class: "label"
+          %p.control
+            = f.text_area :description, class: "textarea", autocomplete: "off"
+        .actions
+          = f.submit "Save", class: "button is-primary"

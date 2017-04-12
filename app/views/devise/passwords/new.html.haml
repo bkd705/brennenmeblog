@@ -1,0 +1,12 @@
+.container
+  .columns
+    .column.is-half.is-offset-one-quarter
+      %h2.subtitle Forgot your password?
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+        .field
+          = f.label :email, :class => "label"
+          = f.email_field :email, :class => "input", autofocus: true
+        %p.control
+          = f.submit "Send me reset password instructions", :class => "button is-primary"
+      = render "devise/shared/links"

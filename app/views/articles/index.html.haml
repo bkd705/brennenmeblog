@@ -1,0 +1,7 @@
+.container
+  .columns
+    - if @articles
+      - @articles.each do |article|
+        .column
+          %p= article.title
+          %small= article.user.profile.first_name

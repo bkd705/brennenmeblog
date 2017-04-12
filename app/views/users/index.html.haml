@@ -1,0 +1,6 @@
+.container
+  .columns
+    - @users.each do |user|
+      - if user.profile
+        .column
+          %p= user.profile.first_name

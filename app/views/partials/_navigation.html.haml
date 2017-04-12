@@ -1,0 +1,24 @@
+%nav.nav
+  .container
+    .nav-left
+      = link_to root_path, class: "nav-item" do
+        %h4 Brennen.me
+    .nav-center
+      %a.nav-item
+        %span.icon
+          %i.fa.fa-github
+      %a.nav-item
+        %span.icon
+          %i.fa.fa-twitter
+    %span.nav-toggle
+      %span
+      %span
+      %span
+    .nav-right.nav-menu
+      = link_to "Home", root_path, class: "nav-item"
+      = link_to "Blog", root_path, class: "nav-item"
+      - if user_signed_in?
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-item"
+      - else
+        = link_to "Log in", new_user_session_path, class: "nav-item"
+        = link_to "Sign up", new_user_registration_path, class: "nav-item"

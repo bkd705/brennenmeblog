@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title Brennenme
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css", :rel => "stylesheet"}/
+  %body
+    = render 'partials/navigation'
+    = yield
