@@ -1,0 +1,19 @@
+.container
+  .columns
+    .column.is-half.is-offset-one-quarter
+      %h2.subtitle Post an article!
+      = form_for(@article, url: articles_path) do |f|
+        .field
+          = f.label :title, class: "label"
+          %p.control
+            = f.text_field :title, class: "input", autofocus: true
+        .field
+          = f.label :body, class: "label"
+          %p.control
+            = f.text_area :body, class: "textarea", autocomplete: "off"
+        .field
+          = f.label :tag, class: "label"
+          %p.control
+            = f.text_field :tag, class: "input"
+        .actions
+          = f.submit "Post", class: "button is-primary"

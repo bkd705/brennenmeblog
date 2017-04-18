@@ -4,12 +4,16 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def show
+    @article = Article.find( params[:id] )
+  end
+
   def new
     @article = Article.new
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       flash[:success] = "Article saved successfully!"
@@ -23,6 +27,6 @@ class ArticlesController < ApplicationController
   private
 
     def article_params
-      params.require(:article).permit(:user_id, :title, :body, :tag)
+      params.require(:article).permit(:title, :body, :tag)
     end
 end

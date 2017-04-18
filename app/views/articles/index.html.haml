@@ -1,7 +1,12 @@
-.container
-  .columns
-    - if @articles
-      - @articles.each do |article|
-        .column
-          %p= article.title
-          %small= article.user.profile.first_name
+= render 'partials/header'
+.container--small
+  - @articles.each do |article|
+    .article
+      .content
+        .article__head
+          = link_to article_path( article.id ), :class => "article__link" do
+            %h4= article.title
+          %strong= "#{article.user.profile.first_name} #{article.user.profile.last_name}"
+          %small= article.created_at.to_formatted_s(:short)
+        .article__body
+          %p= "#{article.body[0...256]}..."

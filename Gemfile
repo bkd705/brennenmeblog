@@ -41,6 +41,9 @@ gem 'devise'
 # Use HAML for templating
 gem 'haml'
 
+# Use redcarpet for markdown parsing
+gem 'redcarpet'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

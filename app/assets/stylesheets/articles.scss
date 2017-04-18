@@ -1,3 +1,20 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container--small {
+  width: 768px;
+  margin: 0 auto;
+}
+
+.article {
+  margin: 75px 0;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.content .article__link h4 {
+  color: #0366d6;
+}
